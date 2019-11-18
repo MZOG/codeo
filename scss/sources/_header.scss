@@ -3,8 +3,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: $white;
   z-index: 10;
+  background: $purple;
   
   @include mq('tablet', max) {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
@@ -18,6 +18,13 @@ header {
 
     @include mq('desktop') {
       padding: 20px 0;
+    }
+  }
+
+  .logo {
+    a {
+      color: #fff;
+      text-decoration: none;
     }
   }
 
@@ -42,6 +49,7 @@ header {
       opacity: 1;
       width: auto;
       box-shadow: none;
+      background: none;
     }
 
     &.is-active {
@@ -56,10 +64,24 @@ header {
       list-style: none;
 
       li {
-
+        
         @include mq('tablet') {
           display: inline-block;
         }
+
+        a {
+          color: $purple;
+          display: block;
+          text-decoration: none;
+          padding: 10px 0;
+
+          @include mq('tablet') {
+            color: $white;
+            padding: 10px 20px;
+          }
+        }
+
+        
       }
     }
   }

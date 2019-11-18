@@ -17,7 +17,16 @@ body {
   font-family: $ibm;
   font-size: 62.5%;
   @include size(16px);
-  margin-top: 62px;
+  color: $black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-top: 82px;
 }
 
 .container {
@@ -31,10 +40,41 @@ body {
   }
 }
 
+.noe {
+  font-family: $noe;
+  line-height: 1em;
+}
+
+.btn {
+  text-decoration: none;
+  color: $green;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 1px solid $green;
+
+  &:hover {
+    background: $green;
+    color: $white;
+  }
+}
+
+h2 {
+  @include size(30px);
+  color: $black;
+  padding-bottom: .7rem;
+
+  @include mq('tablet') {
+    @include size(35px);
+  }
+
+  @include mq('desktop') {
+    @include size(42px);
+  }
+}
+
 .single, .type-page {
   h1 {
     position: relative;
-    font-family: $noe;
     @include size(25px);
     @include transition(all 0.1s ease-in-out);
 
