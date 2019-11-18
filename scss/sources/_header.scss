@@ -1,0 +1,72 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $white;
+  z-index: 10;
+  
+  @include mq('tablet', max) {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  }
+
+  > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    @include mq('desktop') {
+      padding: 20px 0;
+    }
+  }
+
+  nav {
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    top: 63px;
+    padding: 0 20px 20px 20px;
+    opacity: 0;
+    @include transition(all .2s ease-in-out);
+    background: $white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+
+    @include mq('tablet') {
+      transition: none;
+      position: relative;
+      top: unset;
+      padding: 0;
+      left: unset;
+      opacity: 1;
+      width: auto;
+      box-shadow: none;
+    }
+
+    &.is-active {
+      top: 63px;
+      left: 0;
+      opacity: 1;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+
+        @include mq('tablet') {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    @include mq('tablet') {
+      display: none;
+    }
+  }
+}

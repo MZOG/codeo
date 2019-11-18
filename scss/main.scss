@@ -1,0 +1,85 @@
+@import 'sources/fonts';
+@import 'sources/settings';
+@import 'sources/hamburgers/hamburgers.scss';
+@import 'sources/header';
+
+@import 'sources/articles';
+@import 'sources/footer';
+@import 'sources/intro';
+@import 'sources/offer';
+@import 'sources/portfolio';
+@import 'sources/process';
+@import 'sources/standing';
+@import 'sources/testimonials';
+@import 'sources/blog';
+
+body {
+  font-family: $ibm;
+  font-size: 62.5%;
+  @include size(16px);
+  margin-top: 62px;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+
+  @include mq('desktop') {
+    width: 1060px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+.single, .type-page {
+  h1 {
+    position: relative;
+    font-family: $noe;
+    @include size(25px);
+    @include transition(all 0.1s ease-in-out);
+
+    @include mq('tablet') {
+      @include size(35px);
+
+      &::before {
+        display: block;
+        content: "";
+        background-image: url("https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png");
+        position: absolute;
+        height: 287px;
+        right: -90px;
+        pointer-events: none;
+        position: absolute;
+        top: 17px;
+        width: 310px;
+        transform: rotate(90deg);
+      }
+    }
+
+    @include mq('desktop') {
+      @include size(45px);
+    }
+  }
+
+  // set default paragraph
+  p {
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: $sundown;
+  }
+}
+
+blockquote {
+  background: rgba($purple, 0.1);
+  padding: 20px 40px 20px 40px;
+  margin: 0;
+  border-left: 5px solid rgba($purple, 0.3);
+  
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+}
