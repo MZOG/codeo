@@ -10,7 +10,7 @@
 <!-- intro -->
 <section class="intro">
   <div class="container ">
-    <p>hejka</p>
+    <h1 class="noe">Strona internetowa dla Ciebie</h1>
   </div>
 </section>
 
