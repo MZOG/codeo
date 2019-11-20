@@ -1,0 +1,72 @@
+.post,
+.page {
+  &__left {
+    width: 100%;
+    margin-bottom: 2rem;
+    position: relative;
+
+    @include mq('tablet') {
+      width: calc(35% - 10px);
+      margin-bottom: 0;
+      margin-top: 30px;
+    }
+
+    @include mq('desktop') {
+      &::before {
+        display: block;
+        content: "";
+        background-image: url("https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png");
+        position: absolute;
+        height: 200px;
+        left: -125px;
+        pointer-events: none;
+        position: absolute;
+        top: 108px;
+        width: 200px;
+        transform: rotate(-90deg);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+      @include mq('desktop') {
+        position: absolute;
+        left: -100px;
+        max-width: 450px;
+      }
+    }
+  }
+
+  &__right {
+    width: 100%;
+
+    @include mq('tablet') {
+      width: calc(65% - 10px);
+      margin-top: 30px;
+    }
+  }
+}
+
+.single,
+.type-page {
+  p {
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: justify;
+  }
+}
+
+blockquote {
+    background: rgba($purple, 0.1);
+    padding: 20px 40px 20px 40px;
+    margin: 0;
+    border-left: 5px solid rgba($purple, 0.3);
+  
+    p {
+      margin: 0;
+      line-height: 1.4;
+    }
+  }

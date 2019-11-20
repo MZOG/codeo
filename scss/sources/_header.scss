@@ -96,6 +96,21 @@ header {
         
         @include mq('tablet') {
           display: inline-block;
+
+          &.current-menu-item {
+            a {
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-right: 1px solid $purple;
+                border-width: 10px;
+              }
+            }
+          }
         }
 
         a {

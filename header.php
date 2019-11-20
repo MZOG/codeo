@@ -18,7 +18,7 @@
 			<div class="container">
 				<div class="logo">
 					<a href="<?php echo home_url(); ?>" class="noe">
-						codeo 
+						marcin zogrodnik 
 					</a>
 				</div>
 				<nav class="nav" role="navigation">

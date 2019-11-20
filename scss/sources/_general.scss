@@ -1,0 +1,108 @@
+body {
+    font-family: $ibm;
+    font-size: 62.5%;
+    @include size(16px);
+    color: $black;
+    margin-top: 65px;
+
+    @include mq('tablet') {
+        margin-top: 80px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+
+    @include mq('desktop') {
+        width: 1060px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    &-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include mq('tablet') {
+            flex-direction: row;
+        }
+    }
+}
+
+section {
+    display: block;
+}
+
+// font noe
+.noe {
+    font-family: $noe;
+    line-height: 1em;
+}
+
+.btn {
+    text-decoration: none;
+    color: $purple;
+    padding: 5px 20px;
+    border-radius: 25px;
+    border: 1px solid $purple;
+    @include transition(all .2s ease-in-out);
+
+    &:hover {
+        background: $purple;
+        color: $white;
+    }
+}
+
+h1 {
+    position: relative;
+    width: 100%;
+    @include size(25px);
+    @include transition(all 0.1s ease-in-out);
+
+    @include mq('tablet') {
+        @include size(35px);
+    }
+
+    @include mq('desktop') {
+        &::before {
+            display: block;
+            content: "";
+            background-image: url("https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png");
+            position: absolute;
+            height: 287px;
+            right: -90px;
+            pointer-events: none;
+            position: absolute;
+            top: 10px;
+            width: 310px;
+            transform: rotate(90deg);
+        }
+    }
+
+    @include mq('desktop') {
+        @include size(45px);
+        text-align: center;
+    }
+}
+
+h2 {
+    @include size(30px);
+    color: $black;
+    padding-bottom: .7rem;
+
+    @include mq('tablet') {
+        @include size(35px);
+    }
+
+    @include mq('desktop') {
+        @include size(42px);
+    }
+}
