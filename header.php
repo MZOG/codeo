@@ -18,11 +18,8 @@
 			<div class="container">
 				<div class="logo">
 					<a href="<?php echo home_url(); ?>" class="noe">
-						codeo
+						codeo 
 					</a>
-				</div>
-				<div class="post-scroll">
-					<p></p>
 				</div>
 				<nav class="nav" role="navigation">
 					<?php html5blank_nav(); ?>
