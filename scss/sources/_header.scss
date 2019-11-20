@@ -13,6 +13,29 @@ header {
 
   &.scroll {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+    .logo {
+      opacity: 0.3;
+
+      a {
+        &:hover {
+          opacity: 1 !important;
+        }
+      }
+    }
+
+    nav ul li a {
+      opacity: 0.3;
+    }
+  }
+
+  .post-scroll {
+    @include transition(all .2s ease-in-out);
+    p {
+      @include transition(all .2s ease-in-out);
+      margin: 0;
+      font-weight: 500;
+    }
   }
 
   > .container {
@@ -27,6 +50,7 @@ header {
   }
 
   .logo {
+    @include transition(all .2s ease-in-out);
     a {
       color: $purple;
       text-decoration: none;
@@ -85,6 +109,7 @@ header {
           text-decoration: none;
           padding: 10px 0;
           @include size(16px);
+          @include transition(all .2s ease-in-out);
 
           @include mq('tablet') {
             padding: 10px 20px;

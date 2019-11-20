@@ -4,6 +4,10 @@
 
 		'use strict';
 
+		// post name
+		var singlePostName = $('.post_name').text()
+		var headerPostName = $('.post-scroll p')
+
 		// handle nav button
 		var $hamburger = $(".hamburger");
 		var $navigation = $("nav");
@@ -19,10 +23,14 @@
 
 			if (scroll >= 30) {
 				header.addClass("scroll");
+				headerPostName.text(singlePostName)
 			} else {
 				header.removeClass("scroll");
+				headerPostName.text('')
 			}
 		});
+
+		
 
 	});
 

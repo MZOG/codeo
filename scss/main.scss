@@ -86,7 +86,7 @@ h1 {
 
   @include mq('tablet') {
     @include size(35px);
-    
+
   }
 
   @include mq('desktop') {
@@ -158,9 +158,26 @@ blockquote {
       margin-top: 30px;
     }
 
+    @include mq('desktop') {
+      &::before {
+        display: block;
+        content: "";
+        background-image: url("https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png");
+        position: absolute;
+        height: 200px;
+        left: -125px;
+        pointer-events: none;
+        position: absolute;
+        top: 108px;
+        width: 200px;
+        transform: rotate(-90deg);
+      }
+    }
+
     img {
       max-width: 100%;
       border-radius: 15px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
 
       @include mq('desktop') {
         position: absolute;

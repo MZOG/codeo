@@ -3,7 +3,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="container container-flex">
 			
-			<h1 class="noe"><?php the_title(); ?></h1>
+			<h1 class="noe post_name"><?php the_title(); ?></h1>
 
 			<div class="post__left">
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
