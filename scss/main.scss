@@ -26,10 +26,10 @@ body {
 }
 
 body {
-  margin-top: 62.5px;
+  margin-top: 65px;
 
   @include mq('tablet') {
-    margin-top: 82px;
+    margin-top: 80px;
   }
 }
 
@@ -42,6 +42,21 @@ body {
     margin: 0 auto;
     padding: 0;
   }
+
+  &-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include mq('tablet') {
+      flex-direction: row;
+    }
+  }
+}
+
+section {
+  display: block;
 }
 
 .noe {
@@ -51,25 +66,30 @@ body {
 
 .btn {
   text-decoration: none;
-  color: $green;
-  padding: 8px 20px;
+  color: $purple;
+  padding: 5px 20px;
   border-radius: 25px;
-  border: 1px solid $green;
+  border: 1px solid $purple;
+  @include transition(all .2s ease-in-out);
 
   &:hover {
-    background: $green;
+    background: $purple;
     color: $white;
   }
 }
 
 h1 {
   position: relative;
+  width: 100%;
   @include size(25px);
   @include transition(all 0.1s ease-in-out);
 
   @include mq('tablet') {
     @include size(35px);
+    
+  }
 
+  @include mq('desktop') {
     &::before {
       display: block;
       content: "";
@@ -79,7 +99,7 @@ h1 {
       right: -90px;
       pointer-events: none;
       position: absolute;
-      top: 17px;
+      top: 10px;
       width: 310px;
       transform: rotate(90deg);
     }
@@ -104,7 +124,8 @@ h2 {
   }
 }
 
-.single, .type-page {
+.single,
+.type-page {
   p {
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -117,49 +138,44 @@ blockquote {
   padding: 20px 40px 20px 40px;
   margin: 0;
   border-left: 5px solid rgba($purple, 0.3);
-  
+
   p {
     margin: 0;
     line-height: 1.4;
   }
 }
 
-.post {
-  h1 {
+.post,
+.page {
+  &__left {
     width: 100%;
-  }
-
-  >.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: column;
+    margin-bottom: 2rem;
+    position: relative;
 
     @include mq('tablet') {
-      flex-direction: row;
+      width: calc(35% - 10px);
+      margin-bottom: 0;
+      margin-top: 30px;
     }
 
-    .post-left {
-      width: 100%;
-      margin-bottom: 2rem;
+    img {
+      max-width: 100%;
+      border-radius: 15px;
 
-      @include mq('tablet') {
-        width: calc(35% - 10px);
-        margin-bottom: 0;
-      }
-
-      img {
-        max-width: 100%;
-        border-radius: 15px;
+      @include mq('desktop') {
+        position: absolute;
+        left: -100px;
+        max-width: 450px;
       }
     }
+  }
 
-    .post-right {
-      width: 100%;
+  &__right {
+    width: 100%;
 
-      @include mq('tablet') {
-        width: calc(65% - 10px);
-      }
+    @include mq('tablet') {
+      width: calc(65% - 10px);
+      margin-top: 30px;
     }
   }
 }

@@ -4,9 +4,14 @@ header {
   left: 0;
   width: 100%;
   z-index: 10;
-  background: $purple;
+  background: $white;
+  @include transition(box-shadow .2s ease-in-out);
   
   @include mq('tablet', max) {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  }
+
+  &.scroll {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
   }
 
@@ -23,8 +28,13 @@ header {
 
   .logo {
     a {
-      color: #fff;
+      color: $purple;
       text-decoration: none;
+      @include size(25px);
+
+      @include mq('tablet') {
+        @include size(30px);
+      }
     }
   }
 
@@ -53,7 +63,7 @@ header {
     }
 
     &.is-active {
-      top: 63px;
+      top: 65px;
       left: 0;
       opacity: 1;
     }
@@ -74,10 +84,11 @@ header {
           display: block;
           text-decoration: none;
           padding: 10px 0;
+          @include size(16px);
 
           @include mq('tablet') {
-            color: $white;
             padding: 10px 20px;
+            @include size(14px);
           }
         }
 

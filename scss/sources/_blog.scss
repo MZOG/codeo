@@ -1,24 +1,23 @@
 .blog {
   h2 {
-    font-family: $noe;
     @include size(22px);
+    font-weight: 500;
 
     @include mq('tablet') {
-      @include size(30px);
+      @include size(23px);
     }
 
     @include mq('desktop') {
-      @include size(30px);
+      @include size(25px);
     }
-    
-    a {
-      color: $green;
-      text-decoration: none;
 
+    a {
+      color: $black;
+      text-decoration: none;
     }
   }
 
-  .blog-articles {
+  &-articles {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -26,30 +25,78 @@
 
     @include mq('tablet') {
       flex-direction: row;
+      margin-top: 30px;
     }
 
-    .blog-item {
-      width: calc(50% - 5px);
+    &-item {
       display: flex;
       justify-content: space-between;
-      padding: 20px;
       @include transition(all .2s ease-in-out);
       position: relative;
+      margin-bottom: 40px;
+      border-radius: 10px;
 
-      &:hover {
-        transform: translateY(-.39375rem);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+      @include mq('tablet') {
+        width: calc(50% - 20px);
+        padding: 20px;
+        border: 1px solid rgba($black, 0.1);
       }
 
-      .item-left {
+      &:nth-child(1) {
+        background: rgba($purple, 0.1);
+        border: 1px solid rgba($purple, 0.2);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+        .blog-articles-item__left-more {
+          opacity: 1;
+          visibility: visible;
+
+          .btn {
+            border-color: rgba($purple, 0.2);
+            color: rgba($purple, 0.6);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+            &:hover {
+              background: rgba($purple, 0.8);
+              color: $white;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        @include mq('tablet') {
+          transform: translateY(-.39375rem);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+        }
+
+        .blog-articles-item__left-more {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &__left {
         width: calc(50% - 20px);
+        position: relative;
 
         h2 {
           margin: 0;
         }
+
+        &-more {
+          @include mq('tablet') {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(opacity .4s ease-in-out);
+          }
+        }
       }
 
-      .item-right {
+      &__right {
         width: calc(50% - 20px);
 
         img {

@@ -17,7 +17,7 @@
 		<header class="header" role="banner">
 			<div class="container">
 				<div class="logo">
-					<a href="<?php echo home_url(); ?>">
+					<a href="<?php echo home_url(); ?>" class="noe">
 						codeo
 					</a>
 				</div>

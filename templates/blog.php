@@ -8,25 +8,29 @@ $blog = new WP_Query( array(
 ?>
 
 <!-- intro -->
-<section class="blog">
-  <div class="container">
+<section class="blog post">
+  <div class="container container-flex">
 
-  <h1>Blog</h1>
+  <h1 class="noe">Blog</h1>
 
   <div class="blog-articles">
   <?php if ( $blog->have_posts() ) : ?>
     <?php while ( $blog->have_posts() ) : $blog->the_post();?>
-    <article class="blog-item">
-      <div class="item-left">
+    <article class="blog-articles-item">
+      <div class="blog-articles-item__left">
         <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
         <?php 
           $excerpt = get_the_excerpt();
-          $excerpt = substr( $excerpt , 0, 100); 
+          $excerpt = substr( $excerpt , 0, 50); 
           ?>
-        <p><?php echo $excerpt; ?> ...</p>
+        <p><?php echo $excerpt; ?></p>
+
+        <div class="blog-articles-item__left-more">
+          <a href="<?php echo get_permalink(); ?>" class="btn">Czytaj</a>
+        </div>
       </div>
 
-      <div class="item-right">
+      <div class="blog-articles-item__right">
         <a href="<?php echo get_permalink(); ?>">
           <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
         </a>
