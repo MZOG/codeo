@@ -15,6 +15,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<header class="header" role="banner">
+			<div class="sticky-bar"></div>
 			<div class="container">
 				<div class="logo">
 					<a href="<?php echo home_url(); ?>" class="noe">

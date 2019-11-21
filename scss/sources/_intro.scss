@@ -3,18 +3,31 @@
 
   >.container {
     height: calc(100% - 180px);
-    display: flex;
     align-items: center;
   }
 
   h1 {
+    text-align: left;
+    position: relative;
+
     @include mq('desktop') {
       @include size(60px);
       margin: 0;
-    }
 
-    &::before {
-      display: none;
+      &::before {
+        display: block;
+        content: "";
+        background-image: url("https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png");
+        position: absolute;
+        height: 287px;
+        left: -80px;
+        pointer-events: none;
+        position: absolute;
+        top: -80px;
+        width: 310px;
+        transform: rotate(0);
+        opacity: 0.6;
+      }
     }
   }
 }

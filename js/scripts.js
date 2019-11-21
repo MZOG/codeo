@@ -17,7 +17,7 @@
 		$(window).scroll(function () {
 			var scroll = $(window).scrollTop();
 
-			if (scroll >= 30) {
+			if (scroll >= 10) {
 				header.addClass("scroll");
 			} else {
 				header.removeClass("scroll");

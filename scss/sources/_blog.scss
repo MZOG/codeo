@@ -28,6 +28,43 @@
             margin-top: 30px;
         }
 
+        &-sponsored {
+            background: rgba($purple, 0.8);
+            flex-direction: column;
+            justify-content: center !important;
+            padding: 20px;
+
+            h2 {
+                color: $white;
+                text-align: center;
+                width: 100%;
+            }
+
+            p {
+                color: $white;
+                text-align: center;
+            }
+
+            &__cta {
+                text-align: center;
+                margin-top: 17px;
+
+                .btn {
+                    display: inline-block;
+                    border-color: $white;
+                    background: $white;
+                    color: $purple;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: $purple;
+                        color: $white;
+                        border-color: $purple;
+                    }
+                }
+            }
+        }
+
         &-item {
             display: flex;
             justify-content: space-between;
@@ -44,25 +81,26 @@
             }
 
             &:nth-child(1) {
-                background: rgba($purple, 0.03);
-                border: 1px solid rgba($purple, 0.2);
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+                width: 100%;
+                // background: rgba($purple, 0.03);
+                // border: 1px solid rgba($purple, 0.2);
+                // box-shadow: 0 4px 6px -1px rgba(24, 17, 17, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
 
-                .blog-articles-item__left-more {
-                    opacity: 1;
-                    visibility: visible;
+                // .blog-articles-item__left-more {
+                //     opacity: 1;
+                //     visibility: visible;
 
-                    .btn {
-                        border-color: rgba($purple, 0.2);
-                        color: rgba($purple, 0.6);
-                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+                //     .btn {
+                //         border-color: rgba($purple, 0.2);
+                //         color: rgba($purple, 0.6);
+                //         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
 
-                        &:hover {
-                            background: rgba($purple, 0.8);
-                            color: $white;
-                        }
-                    }
-                }
+                //         &:hover {
+                //             background: rgba($purple, 0.8);
+                //             color: $white;
+                //         }
+                //     }
+                // }
             }
 
             &:hover {

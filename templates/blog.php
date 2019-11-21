@@ -14,6 +14,7 @@ $blog = new WP_Query( array(
   <h1 class="noe">Blog</h1>
 
   <div class="blog-articles">
+  <!-- <?php $i = 1; ?> -->
   <?php if ( $blog->have_posts() ) : ?>
     <?php while ( $blog->have_posts() ) : $blog->the_post();?>
     <article class="blog-articles-item">
@@ -36,6 +37,18 @@ $blog = new WP_Query( array(
         </a>
       </div>
     </article>
+
+    <?php 
+      if( 1 == $blog->current_post ):
+        echo '<article class="blog-articles-item blog-articles-sponsored">
+        <h2>Profesjonalna wycena projektu</h2>
+        <p>Wyróżnij się w internecie</p>
+        <div class="blog-articles-sponsored__cta">
+          <a class="btn" href="profesjonalna-wycena-projektu">Dowiedz się więcej</a>
+        </div>
+      </article>';
+    endif;
+    ?>
         
     <?php endwhile; ?>
     <?php wp_reset_postdata(); ?>
