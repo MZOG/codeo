@@ -2,6 +2,9 @@
   position: relative;
   background: $grey;
   padding-bottom: 50px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid $grey2;
+
   &::before {
     content: "";
     position: absolute;
@@ -15,7 +18,7 @@
     border-top: 1px solid $grey2;
 
     @include mq('tablet') {
-      top: -85px;
+      top: -110px;
     }
   }
 
@@ -45,7 +48,7 @@
       margin-bottom: 30px;
 
       @include mq('tablet') {
-        width: calc(50% - 10px);
+        width: calc(50% - 30px);
         margin-bottom: 0;
       }
 

@@ -53,8 +53,9 @@ section {
 
 .btn {
     text-decoration: none;
+    background: none;
     color: $purple;
-    padding: 5px 20px;
+    padding: 10px 20px;
     border-radius: 25px;
     border: 1px solid $purple;
     @include transition(all .2s ease-in-out);
@@ -68,7 +69,7 @@ section {
 h1 {
     position: relative;
     width: 100%;
-    @include size(25px);
+    @include size(30px);
     @include transition(all 0.1s ease-in-out);
 
     @include mq('tablet') {

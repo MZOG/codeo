@@ -30,7 +30,7 @@
 
         &-sponsored {
             background: rgba($purple, 0.8);
-            flex-direction: column;
+            flex-direction: column !important;
             justify-content: center !important;
             padding: 20px;
 
@@ -43,11 +43,11 @@
             p {
                 color: $white;
                 text-align: center;
+                margin-bottom: 1rem;
             }
 
             &__cta {
                 text-align: center;
-                margin-top: 17px;
 
                 .btn {
                     display: inline-block;
@@ -72,8 +72,10 @@
             position: relative;
             margin-bottom: 40px;
             border-radius: 10px;
+            flex-direction: column-reverse;
 
             @include mq('tablet') {
+                flex-direction: row;
                 width: calc(50% - 20px);
                 padding: 20px;
                 border: 1px solid rgba($black, 0.1);
@@ -82,25 +84,11 @@
 
             &:nth-child(1) {
                 width: 100%;
-                // background: rgba($purple, 0.03);
-                // border: 1px solid rgba($purple, 0.2);
-                // box-shadow: 0 4px 6px -1px rgba(24, 17, 17, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+                margin: 0 auto 40px auto;
 
-                // .blog-articles-item__left-more {
-                //     opacity: 1;
-                //     visibility: visible;
-
-                //     .btn {
-                //         border-color: rgba($purple, 0.2);
-                //         color: rgba($purple, 0.6);
-                //         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-
-                //         &:hover {
-                //             background: rgba($purple, 0.8);
-                //             color: $white;
-                //         }
-                //     }
-                // }
+                @include mq('tablet') {
+                    width: 70%;
+                }
             }
 
             &:hover {
@@ -116,14 +104,21 @@
             }
 
             &__left {
-                width: calc(50% - 20px);
+                width: 100%;
                 position: relative;
 
+                @include mq('tablet') {
+                    width: calc(50% - 20px);
+                }
+
+
                 h2 {
-                    margin: 0;
+                    margin-top: 0.7rem;
                 }
 
                 &-more {
+                    margin-top: 0.9rem;
+
                     @include mq('tablet') {
                         position: absolute;
                         bottom: 0;
@@ -132,11 +127,22 @@
                         visibility: hidden;
                         @include transition(opacity .4s ease-in-out);
                     }
+
+                    .read-more {
+                        display: inline-block;
+                        color: $purple;
+                        text-decoration: none;
+                    }
                 }
             }
 
             &__right {
-                width: calc(50% - 20px);
+                width: 100%;
+                position: relative;
+
+                @include mq('tablet') {
+                    width: calc(50% - 20px);
+                }
 
                 img {
                     max-width: 100%;

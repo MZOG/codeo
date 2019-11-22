@@ -27,6 +27,37 @@
       }
     }
 
+    .why-me {
+      position: absolute;
+      background: $purple;
+      bottom: 2rem;
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid rgba($black, 0.1);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+      h2 {
+        line-height: 1;
+        @include size(18px);
+        margin-bottom: 0.7rem;
+        font-weight: 500;
+        color: $white;
+      }
+
+      p {
+        color: $white;
+      }
+
+      a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+          border-bottom: 1px solid $white;
+        }
+      }
+    }
+
     img {
       max-width: 100%;
       border-radius: 15px;
@@ -47,6 +78,27 @@
       width: calc(65% - 10px);
       margin-top: 30px;
     }
+
+    h2 {
+      line-height: 1;
+
+      @include size(25px);
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      padding: 0;
+    }
+
+    h3 {
+      line-height: 1;
+      @include size(20px);
+      margin-bottom: 0.7rem;
+    }
+
+    h4 {
+      line-height: 1;
+      @include size(18px);
+      margin-bottom: 0.7rem;
+    }
   }
 }
 
@@ -60,13 +112,13 @@
 }
 
 blockquote {
-    background: rgba($purple, 0.1);
-    padding: 20px 40px 20px 40px;
+  background: rgba($purple, 0.1);
+  padding: 20px 40px 20px 40px;
+  margin: 0;
+  border-left: 5px solid rgba($purple, 0.3);
+
+  p {
     margin: 0;
-    border-left: 5px solid rgba($purple, 0.3);
-  
-    p {
-      margin: 0;
-      line-height: 1.4;
-    }
+    line-height: 1.4;
   }
+}

@@ -27,7 +27,7 @@ $blog = new WP_Query( array(
         <p><?php echo $excerpt; ?></p>
 
         <div class="blog-articles-item__left-more">
-          <a href="<?php echo get_permalink(); ?>" class="btn">Czytaj</a>
+          <a href="<?php echo get_permalink(); ?>" class="read-more">Czytaj</a>
         </div>
       </div>
 
