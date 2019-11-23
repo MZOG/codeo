@@ -1,9 +1,8 @@
 .portfolio {
   position: relative;
   background: $grey;
-  padding-bottom: 50px;
-  margin-bottom: 40px;
   border-bottom: 1px solid $grey2;
+  padding-bottom: 50px;
 
   &::before {
     content: "";
@@ -22,13 +21,13 @@
     }
   }
 
-  >.container {
-    position: relative;
+  p {
+    @include size(20px);
+    font-weight: 100;
   }
 
-  .portfolio-cta {
-    
-    
+  >.container {
+    position: relative;
   }
 
   .portfolio-container {
@@ -50,18 +49,6 @@
       @include mq('tablet') {
         width: calc(50% - 30px);
         margin-bottom: 0;
-      }
-
-      a {
-        color: $black;
-        text-decoration: none;
-        padding: 15px 0;
-        display: block;
-        @include size(22px);
-
-        @include mq('desktop') {
-          @include size(28px);
-        }
       }
 
       .portfolio-image {

@@ -2,23 +2,19 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<div class="container container-flex">
 
-			<!-- article -->
 			<article id="post-404">
 
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
-				</h2>
+				<h1 class="noe"><?php _e( 'Oho.. coś jest nie tak.', 'html5blank' ); ?></h1>
+
+				<p>Informacja o stronie, której szukasz została wysłana do administratora.</p>
+				<a href="<?php echo home_url(); ?>" class="btn"><?php _e( 'Return home?', 'html5blank' ); ?></a>
 
 			</article>
-			<!-- /article -->
 
-		</section>
-		<!-- /section -->
+		</div>
 	</main>
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

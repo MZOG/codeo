@@ -21,7 +21,6 @@
 				header.addClass("scroll");
 			} else {
 				header.removeClass("scroll");
-				headerPostName.text('')
 			}
 		});
 

@@ -9,11 +9,7 @@
 				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
 					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
 				<?php endif; ?>
-				<aside class="why-me">
-					<h2>Karolina Wawrzyniak</h2>
-					<p>Marcin wykonał świetną pracę nad stroną <strong>Doradca Językowy</strong>. Dbałość o szczegóły to coś na czym nam zależało. Projekt został zakończony na czas. Polecam Marcina poineważ to profesjonalista w każdym szczególe.</p>
-					<p><a href="https://www.doradcajezykowy.com">www.doradcajezykowy.com</a></p>
-				</aside>
+				
 			</div>
 
 			<div class="post__right">

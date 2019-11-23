@@ -8,6 +8,8 @@ body {
     @include mq('tablet') {
         margin-top: 80px;
     }
+
+    scroll-behavior: smooth;
 }
 
 * {
@@ -59,6 +61,7 @@ section {
     border-radius: 25px;
     border: 1px solid $purple;
     @include transition(all .2s ease-in-out);
+    display: inline-block;
 
     &:hover {
         background: $purple;
@@ -109,5 +112,19 @@ h2 {
 
     @include mq('desktop') {
         @include size(42px);
+    }
+}
+
+.portfolio,
+.process,
+.offer,
+.testimonials,
+.standing,
+.articles {
+    p {
+        &:first-of-type {
+            @include size(20px);
+            font-weight: 200;
+        }
     }
 }
