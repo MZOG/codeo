@@ -1,6 +1,19 @@
 			<footer class="footer" role="contentinfo">
 				<div class="container">
+					<div class="general-info">
+						<p>
+							<span class="footer-phone">
+								<a href="tel:07850545566">078 505 455 66</a>
+							</span>
+
+							<span class="footer-email">
+								<a href="mailto:kontakt@marcinzogrodnik.pl">kontakt@marcinzogrodnik.pl</a>
+							</span>
+						</p>
+						<?php footer_menu(); ?>
+					</div>
 					<p class="copyright">&copy; <?php echo date('Y'); ?>  <?php bloginfo('name'); ?>.</p>
+
 				</div>
 			</footer>
 		</main>

@@ -30,6 +30,13 @@
     position: relative;
   }
 
+  .portfolio-cta {
+    text-align: center;
+    @include mq('tablet') {
+      text-align: left;
+    }
+  }
+
   .portfolio-container {
     margin-top: 2rem;
     display: flex;

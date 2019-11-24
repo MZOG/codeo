@@ -2,7 +2,11 @@
     background: $grey;
     padding: 0 0 50px 0;
     position: relative;
-    margin-top: 100px;
+    margin-top: 30px;
+
+    @include mq('tablet') {
+        margin-top: 100px;
+    }
 
     &::before {
         content: "";
@@ -40,7 +44,7 @@
             }
 
             @include mq('tablet-wide') {
-                width: calc(33% - 15px);
+                width: calc(33% - 30px);
             }
 
             h3,
@@ -49,7 +53,7 @@
             }
 
             p {
-                text-align: justify;
+                // text-align: justify;
                 @include size(16px);
                 font-weight: 400;
             }

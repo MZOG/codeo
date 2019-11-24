@@ -1,7 +1,11 @@
 .articles {
     padding: 50px 0;
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
+    
+    @include mq('tablet') {
+        margin-bottom: 100px;
+    }
   
     .articles-container {
       display: flex;

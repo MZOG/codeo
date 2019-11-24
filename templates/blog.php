@@ -7,7 +7,6 @@ $blog = new WP_Query( array(
 ));
 ?>
 
-<!-- intro -->
 <section class="blog page">
   <div class="container container-flex">
 
