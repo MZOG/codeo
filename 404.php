@@ -3,7 +3,7 @@
 		<!-- section -->
 		<div class="container container-flex">
 
-			<article id="post-404">
+			<article id="post-404" class="page-404">
 
 				<h1 class="noe"><?php _e( 'Oho.. coś jest nie tak.', 'html5blank' ); ?></h1>
 
