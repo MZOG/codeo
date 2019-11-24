@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-	<main role="main">
 		<!-- section -->
 		<div class="container container-flex">
 
@@ -14,7 +13,6 @@
 			</article>
 
 		</div>
-	</main>
 
 
 <?php get_footer(); ?>
