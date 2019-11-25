@@ -6,10 +6,11 @@
 			<h1 class="noe post_name"><?php the_title(); ?></h1>
 
 			<div class="post__left">
-				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
+				<!-- featured image -->
+				<?php if ( has_post_thumbnail()) :?>
+					<?php the_post_thumbnail();?>
 				<?php endif; ?>
-				
+				<!-- featured image end -->
 			</div>
 
 			<div class="post__right">

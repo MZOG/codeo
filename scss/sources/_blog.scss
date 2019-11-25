@@ -116,6 +116,7 @@
 
                 @include mq('tablet') {
                     width: calc(50% - 20px);
+                    height: 100%;
                 }
 
                 .excerpt {
@@ -138,8 +139,6 @@
 
                 &-more {
                     margin-top: 0.9rem;
-
-                    
 
                     .read-more {
                         display: inline-block;

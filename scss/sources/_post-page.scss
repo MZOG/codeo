@@ -1,5 +1,6 @@
 .post {
   min-height: 500px;
+
   &__left {
     width: 100%;
     margin-bottom: 2rem;
@@ -42,7 +43,7 @@
 
   &__right {
     width: 100%;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 
     @include mq('tablet') {
       width: calc(65% - 10px);

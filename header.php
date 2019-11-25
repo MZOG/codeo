@@ -12,6 +12,7 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
 		<?php wp_head(); ?>
+		<meta name="google-site-verification" content="Cy9la7-g340S_Xi7V8CztyElFEBGzGK-K-cosdkhL3I" />
 	</head>
 	<body>
 		<header class="header" role="banner">
