@@ -1,5 +1,4 @@
-.post,
-.page {
+.post {
   min-height: 500px;
   &__left {
     width: 100%;
@@ -43,10 +42,12 @@
 
   &__right {
     width: 100%;
+    margin-bottom: 30px; 
 
     @include mq('tablet') {
       width: calc(65% - 10px);
       margin-top: 30px;
+      margin-bottom: 50px;
     }
   }
 
@@ -72,13 +73,10 @@
     margin-bottom: 0.7rem;
     letter-spacing: -0.5px;
   }
-}
 
-.single,
-.type-page {
   p {
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    line-height: 1.4;
+    margin-bottom: 1.6rem;
     text-align: justify;
   }
 }
@@ -103,5 +101,11 @@ blockquote {
     &:hover {
       border-bottom: 1px solid $purple;
     }
+  }
+}
+
+.page {
+  p {
+    margin-bottom: 1.6rem;
   }
 }

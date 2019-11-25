@@ -2,7 +2,7 @@
 
 <?php
 $blog = new WP_Query( array(
-  'category_name' => 'blog, portfolio',
+  'category_name' => 'blog',
   'posts_per_page' => 15,
 ));
 ?>
@@ -23,11 +23,7 @@ $blog = new WP_Query( array(
           $excerpt = get_the_excerpt();
           $excerpt = substr( $excerpt , 0, 50); 
           ?>
-        <p><?php echo $excerpt; ?></p>
-
-        <div class="blog-articles-item__left-more">
-          <a href="<?php echo get_permalink(); ?>" class="read-more">Czytaj</a>
-        </div>
+        <p class="excerpt"><?php echo $excerpt; ?>...</p>
       </div>
 
       <div class="blog-articles-item__right">
@@ -43,7 +39,7 @@ $blog = new WP_Query( array(
         <h2>Profesjonalna wycena projektu</h2>
         <p>Wyróżnij się w internecie</p>
         <div class="blog-articles-sponsored__cta">
-          <a class="btn" href="profesjonalna-wycena-projektu">Dowiedz się więcej</a>
+          <a class="btn" href="darmowa-wycena-strony-www">Dowiedz się więcej</a>
         </div>
       </article>';
     endif;

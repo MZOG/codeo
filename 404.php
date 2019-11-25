@@ -7,8 +7,11 @@
 
 				<h1 class="noe"><?php _e( 'Oho.. coś jest nie tak.', 'html5blank' ); ?></h1>
 
-				<p>Informacja o stronie, której szukasz została wysłana do administratora.</p>
-				<a href="<?php echo home_url(); ?>" class="btn"><?php _e( 'Return home?', 'html5blank' ); ?></a>
+				<p>Wygląda na to, że strona, której szukasz nie istnieje. Sprawdź adres, może wkradł się błąd.</p>
+
+				<div class="page-404-cta">
+					<a href="<?php echo home_url(); ?>" class="btn"><?php _e( 'Powrót na stronę główną', 'html5blank' ); ?></a>
+				</div>
 
 			</article>
 

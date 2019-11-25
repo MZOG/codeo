@@ -1,11 +1,15 @@
 .intro {
-  height: 80vh;
+  height: 90vh;
   display: flex;
   align-items: center;
 
+  @include mq('tablet') {
+    height: 80vh;
+  }
 
   >.container {
     position: relative;
+    margin-top: -90px;
 
     @include mq('phablet') {
       margin-top: -100px;

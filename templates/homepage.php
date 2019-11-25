@@ -73,10 +73,10 @@ $blog = new WP_Query( array(
 
 
 <!-- portfolio -->
-<section class="portfolio">
+<section class="portfolio-homepage">
   <div class="container">
     <h2 class="noe">Realizacje</h2>
-    <p>Zobacz ostatnie projekty</p>
+    <p>Zobacz ostatnie projekty.</p>
 
     <div class="portfolio-container">
     <?php if ( $portfolio->have_posts() ) : ?>
@@ -96,7 +96,7 @@ $blog = new WP_Query( array(
     </div>
 
     <div class="portfolio-cta">
-      <a href="#" class="btn">Zobacz więcej</a>
+      <a href="portfolio" class="btn">Zobacz więcej</a>
     </div>
   </div>
 </section>
@@ -129,7 +129,7 @@ $blog = new WP_Query( array(
         </div>
       </div>
       <div class="process-cta">
-        <a href="#" class="btn">Zapraszam do współpracy</a>
+        <a href="darmowa-wycena-strony-www" class="btn">Zapraszam do współpracy</a>
       </div>
     </div>
   </section>
@@ -485,7 +485,7 @@ $blog = new WP_Query( array(
         <div class="content">
           <?php 
             $excerpt = get_the_excerpt();
-            $excerpt = substr( $excerpt , 0, 150); 
+            $excerpt = substr( $excerpt , 0, 100); 
           ?>
           <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
           <p><?php echo $excerpt; ?></p>
@@ -506,7 +506,18 @@ $blog = new WP_Query( array(
       <p>Zadowolenie klienta jest najważniejsze, zobacz co do powiedzenia mają moi klienci.</p>
 
       <div class="testimonial-container">
-        <div class="testimonial-item">
+
+      <div class="testimonial-item">
+          <div class="top">
+            <div class="info">
+              <h3>Grzegorz Rusztof</h3>
+              <a href="https://turbospeed.co.uk">www.turbospeed.co.uk</a>
+            </div>
+          </div>
+          <p>Współpraca z Marcinem to czysta przyjemność. Doskonale zrozumiał koncepcję firmy oraz wybrał najlepsze rozwiązania aby poprawić wygląd naszej strony. Marcin zawsze służy pomocą nawet w najdrobniejszych zmianach.</p>
+        </div>
+
+        <!-- <div class="testimonial-item">
           <div class="top">
             <div class="info">
               <h3>Karolina Wawrzyniak</h3>
@@ -514,17 +525,9 @@ $blog = new WP_Query( array(
             </div>
           </div>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam praesentium, omnis ipsum blanditiis quidem, alias quae sequi ea adipisci itaque, obcaecati nostrum soluta reiciendis dolorem voluptates rem minima? Non, accusantium!</p>
-        </div>
+        </div> -->
 
-        <div class="testimonial-item">
-          <div class="top">
-            <div class="info">
-              <h3>Sebastian Jabłoński</h3>
-              <a href="#">example.com</a>
-            </div>
-          </div>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam praesentium, omnis ipsum blanditiis quidem, alias quae sequi ea adipisci itaque, obcaecati nostrum soluta reiciendis dolorem voluptates rem minima? Non, accusantium!</p>
-        </div>
+        
       </div>
     </div>
   </section>

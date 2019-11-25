@@ -1,15 +1,7 @@
 .blog {
     h2 {
-        @include size(22px);
+        @include size(20px);
         font-weight: 500;
-
-        @include mq('tablet') {
-            @include size(23px);
-        }
-
-        @include mq('desktop') {
-            @include size(20px);
-        }
 
         a {
             color: $black;
@@ -73,6 +65,17 @@
             margin-bottom: 40px;
             border-radius: 10px;
             flex-direction: column-reverse;
+            
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50%;
+                height: 1px;
+                background: rgba($purple, 0.2);
+            }
 
             @include mq('tablet') {
                 flex-direction: row;
@@ -80,6 +83,10 @@
                 padding: 20px;
                 border: 1px solid rgba($black, 0.1);
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+                &::after {
+                    display: none;
+                }
             }
 
             &:nth-child(1) {
@@ -111,22 +118,28 @@
                     width: calc(50% - 20px);
                 }
 
+                .excerpt {
+                    display: none;
+
+                    @include mq('tablet') {
+                        display: block;
+                    }
+                }
 
                 h2 {
                     margin-top: 0.7rem;
                 }
 
+                p {
+                    font-weight: 400 !important;
+                    @include size(16px);
+                    margin-bottom: 0 !important;
+                }
+
                 &-more {
                     margin-top: 0.9rem;
 
-                    @include mq('tablet') {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        opacity: 0;
-                        visibility: hidden;
-                        @include transition(opacity .4s ease-in-out);
-                    }
+                    
 
                     .read-more {
                         display: inline-block;
@@ -146,8 +159,7 @@
 
                 img {
                     max-width: 100%;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+                    border-radius: 10px; 
                 }
             }
         }

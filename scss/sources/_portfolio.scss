@@ -1,4 +1,4 @@
-.portfolio {
+.portfolio-homepage {
   position: relative;
   background: $grey;
   border-bottom: 1px solid $grey2;
@@ -8,7 +8,7 @@
     content: "";
     position: absolute;
     z-index: -1;
-    width: 100%;
+    width: 100%; 
     height: 100%;
     -webkit-transform: skewY(-12deg);
     transform: skewY(-5deg);

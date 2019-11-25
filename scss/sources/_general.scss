@@ -52,6 +52,12 @@ section {
 .noe {
     font-family: $noe;
     line-height: 1em;
+    letter-spacing: -1px;
+
+    @include mq('tablet') {
+        letter-spacing: inherit;
+        letter-spacing: 0;
+    }
 }
 
 .btn {
@@ -145,4 +151,192 @@ h2 {
             }
         }
     }
+}
+
+.page-404 {
+    p {
+        @include mq('desktop') {
+            text-align: center;
+        }
+    }
+
+    &-cta {
+        margin: 30px 0;
+
+        @include mq('desktop') {
+            text-align: center;
+        }
+    }
+}
+
+.visit-website {
+    text-align: center !important;
+
+    .btn {
+        color: $white;
+    }
+}
+
+.wp-block-image figcaption {
+    color: rgba($black, 0.4);
+    text-align: center !important;
+}
+
+.quick-contact {
+    padding: 20px;
+    border: 1px solid rgba($black, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    @include mq('tablet') {
+        width: 70%;
+        margin: 30px auto 40px auto;
+    }
+
+    .quick-cta {
+        @include mq('tablet') {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            background: $purple;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid $purple;
+            @include transition(all .2s ease-in-out);
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 4px 4px -1px rgba(0, 0, 0, 0.01);
+
+            &:hover {
+                background: darken($purple, 5%);
+                color: $white;
+            }
+        }
+    }
+
+    h2 {
+        letter-spacing: -1px;
+        @include mq('tablet') {
+            text-align: center;
+        }
+
+        span {
+            font-family: $noe;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mq('tablet') {
+        flex-direction: row;
+        margin-top: 40px;
+    }
+
+    .split-left,
+    .split-right {
+        @include mq('tablet') {
+            width: calc(50% - 60px);
+        }
+
+        .page-item {
+            margin-bottom: 20px;
+
+            @include mq('tablet') {
+                margin-bottom: 40px;
+            }
+        }
+
+        .wp-block-image {
+            img {
+                max-width: 100px;
+                height: 100%;
+            }
+        }
+
+        h2 {
+            line-height: 1;
+            @include size(22px);
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+            padding: 0;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            line-height: 1;
+            @include size(20px);
+            margin-bottom: 0.7rem;
+            letter-spacing: -0.5px;
+        }
+    }
+}
+
+.contact-form {
+
+    label {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    input {
+        width: 100%;
+        min-height: 30px;
+        font-family: inherit;
+        margin-top: 10px;
+        display: block;
+        text-indent: 10px;
+        color: $black;
+
+        &[type="submit"] {
+            text-decoration: none;
+            background: $purple;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid $purple;
+            @include transition(all .2s ease-in-out);
+            display: inline-block;
+            max-width: 140px;
+            text-indent: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 4px 4px -1px rgba(0, 0, 0, 0.01);
+
+            &:hover {
+                background: darken($purple, 5%);
+                color: $white;
+            }
+        }
+    }
+
+    textarea {
+        margin-top: 10px;
+        padding: 10px;
+        width: 100%;
+        height: 120px;
+        resize: none;
+        border: 1px solid #cccccc;
+        color: $black;
+    }
+}
+
+.grecaptcha-badge {
+    display: none !important;
 }

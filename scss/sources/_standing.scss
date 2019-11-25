@@ -26,7 +26,7 @@
             @include mq('tablet') {
               display: block;
               content: "";
-              background-image: url('../images/dot-right.png');
+              background-image: url('img/dot-right.png');
               position: absolute;
               height: 318px;
               right: 0;

@@ -13,7 +13,7 @@
 
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?>>
+	<body>
 		<header class="header" role="banner">
 			<div class="sticky-bar"></div>
 			<div class="container">

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article <?php post_class('post'); ?>>
 			<div class="container container-flex">
 			
 			<h1 class="noe post_name"><?php the_title(); ?></h1>

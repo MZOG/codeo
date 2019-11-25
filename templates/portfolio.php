@@ -21,37 +21,11 @@ $portfolio = new WP_Query( array(
         $excerpt = substr( $excerpt , 0, 50);
         $excerpt2 = substr( $excerpt2 , 0, 250);
     ?>
-
-    <?php 
-      if( 0 == $portfolio->current_post ) { ?>
-        <article class="blog-articles-item">
-        <div class="blog-articles-item__left">
-          <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
-          
-          <p><?php echo $excerpt2; ?></p>
-  
-          <div class="blog-articles-item__left-more">
-            <a href="<?php echo get_permalink(); ?>" class="read-more">Więcej</a>
-          </div>
-        </div>
-  
-        <div class="blog-articles-item__right">
-          <a href="<?php echo get_permalink(); ?>">
-            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-          </a>
-        </div>
-      </article>
-     <?php }
-    ?>
     <article class="blog-articles-item">
       <div class="blog-articles-item__left">
         <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
         
-        <p><?php echo $excerpt; ?></p>
-
-        <div class="blog-articles-item__left-more">
-          <a href="<?php echo get_permalink(); ?>" class="read-more">Więcej</a>
-        </div>
+        <p class="excerpt"><?php echo $excerpt; ?>...</p>
       </div>
 
       <div class="blog-articles-item__right">
@@ -67,7 +41,7 @@ $portfolio = new WP_Query( array(
         <h2>Profesjonalna wycena projektu</h2>
         <p>Wyróżnij się w internecie</p>
         <div class="blog-articles-sponsored__cta">
-          <a class="btn" href="profesjonalna-wycena-projektu">Dowiedz się więcej</a>
+          <a class="btn" href="darmowa-wycena-strony-www">Dowiedz się więcej</a>
         </div>
       </article>';
     endif;

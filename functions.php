@@ -141,7 +141,7 @@ function html5blank_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('codeo', get_template_directory_uri() . '/codeo.min.css', array(), '1.0', 'all');
+    wp_register_style('codeo', get_template_directory_uri() . '/codeo.min.css', array(), '1.9.6', 'all');
     wp_enqueue_style('codeo'); // Enqueue it!
 
     // wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
@@ -475,25 +475,11 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
-function wpse15850_body_class( $wp_classes, $extra_classes )
-{
-    // List of the only WP generated classes allowed
-    $whitelist = array( 'home', 'blog', 'archive', 'single', 'category', 'tag', 'error404', 'logged-in', 'admin-bar' );
-
-    // List of the only WP generated classes that are not allowed
-    $blacklist = array( 'home', 'blog', 'archive', 'single', 'category', 'tag', 'error404', 'logged-in', 'admin-bar' );
-
-    // Filter the body classes
-    // Whitelist result: (comment if you want to blacklist classes)
-    $wp_classes = array_intersect( $wp_classes, $whitelist );
-    // Blacklist result: (uncomment if you want to blacklist classes)
-    # $wp_classes = array_diff( $wp_classes, $blacklist );
-
-    // Add the extra classes back untouched
-    return array_merge( $wp_classes, (array) $extra_classes );
-}
-add_filter( 'body_class', 'wpse15850_body_class', 10, 2 );
-
-?>
+add_filter('body_class', function (array $classes) {
+    if (in_array('class_name', $classes)) {
+      unset( $classes[array_search('class_name', $classes)] );
+    }
+  return $classes;
+});
 
 
