@@ -510,23 +510,22 @@ $blog = new WP_Query( array(
       <div class="testimonial-item">
           <div class="top">
             <div class="info">
+              <h3>Karolina Wawrzyniak</h3>
+              <a href="https://www.doradcajezykowy.com">doradcajezykowy.com</a>
+            </div>
+          </div>
+          <p>Współpraca z Marcinem była wspaniała. W błyskawicznym tempie odpowiadał na wszystkie moje zapytania i zamieszczał kolejne elementy na stronie. W cierpliwy sposób tłumaczył na czym polega budowanie strony internetowej i na czym jako przedsiębiorca powinnam się skupić najbardziej. W stu procentach spełnił moje oczekiwania, zatem mogę go polecić jako świetnego fachowca!</p>
+        </div>
+
+      <div class="testimonial-item">
+          <div class="top">
+            <div class="info">
               <h3>Grzegorz Rusztof</h3>
               <a href="https://turbospeed.co.uk">www.turbospeed.co.uk</a>
             </div>
           </div>
           <p>Współpraca z Marcinem to czysta przyjemność. Doskonale zrozumiał koncepcję firmy oraz wybrał najlepsze rozwiązania aby poprawić wygląd naszej strony. Marcin zawsze służy pomocą nawet w najdrobniejszych zmianach.</p>
         </div>
-
-        <!-- <div class="testimonial-item">
-          <div class="top">
-            <div class="info">
-              <h3>Karolina Wawrzyniak</h3>
-              <a href="#">doradcajezykowy.com</a>
-            </div>
-          </div>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam praesentium, omnis ipsum blanditiis quidem, alias quae sequi ea adipisci itaque, obcaecati nostrum soluta reiciendis dolorem voluptates rem minima? Non, accusantium!</p>
-        </div> -->
-
         
       </div>
     </div>
