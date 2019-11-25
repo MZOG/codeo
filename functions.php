@@ -15,13 +15,11 @@
 	Theme Support
 \*------------------------------------*/
 
-if (!isset($content_width))
-{
+if (!isset($content_width)) {
     $content_width = 900;
 }
 
-if (function_exists('add_theme_support'))
-{
+if (function_exists('add_theme_support')) {
     // Add Menu Support
     add_theme_support('menus');
 
@@ -65,49 +63,49 @@ if (function_exists('add_theme_support'))
 // HTML5 Blank navigation
 function html5blank_nav()
 {
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+    wp_nav_menu(
+        array(
+            'theme_location'  => 'header-menu',
+            'menu'            => '',
+            'container'       => 'div',
+            'container_class' => 'menu-{menu slug}-container',
+            'container_id'    => '',
+            'menu_class'      => 'menu',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul>%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+        )
+    );
 }
 
 function footer_menu()
 {
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'footer-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_id'    => 'footer',
-		'menu_class'      => 'footer',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+    wp_nav_menu(
+        array(
+            'theme_location'  => 'footer-menu',
+            'menu'            => '',
+            'container'       => 'div',
+            'container_id'    => 'footer',
+            'menu_class'      => 'footer',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul>%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+        )
+    );
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -115,7 +113,7 @@ function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
+        wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
         wp_enqueue_script('conditionizr'); // Enqueue it!
 
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
@@ -141,7 +139,7 @@ function html5blank_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('codeo', get_template_directory_uri() . '/codeo.min.css', array(), '1.9.7', 'all');
+    wp_register_style('codeo', get_template_directory_uri() . '/codeo.min.css', array(), '2.0.1', 'all');
     wp_enqueue_style('codeo'); // Enqueue it!
 
     // wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
@@ -196,8 +194,7 @@ function add_slug_to_body_class($classes)
 }
 
 // If Dynamic Sidebar Exists
-if (function_exists('register_sidebar'))
-{
+if (function_exists('register_sidebar')) {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
         'name' => __('Widget Area 1', 'html5blank'),
@@ -293,14 +290,14 @@ function html5_style_remove($tag)
 }
 
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
-function remove_thumbnail_dimensions( $html )
+function remove_thumbnail_dimensions($html)
 {
     $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
     return $html;
 }
 
 // Custom Gravatar in Settings > Discussion
-function html5blankgravatar ($avatar_defaults)
+function html5blankgravatar($avatar_defaults)
 {
     $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
     $avatar_defaults[$myavatar] = "Custom Gravatar";
@@ -311,7 +308,7 @@ function html5blankgravatar ($avatar_defaults)
 function enable_threaded_comments()
 {
     if (!is_admin()) {
-        if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+        if (is_singular() and comments_open() and (get_option('thread_comments') == 1)) {
             wp_enqueue_script('comment-reply');
         }
     }
@@ -320,350 +317,331 @@ function enable_threaded_comments()
 // Custom Comments Callback
 function html5blankcomments($comment, $args, $depth)
 {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
+    $GLOBALS['comment'] = $comment;
+    extract($args, EXTR_SKIP);
 
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
-?>
+    if ('div' == $args['style']) {
+        $tag = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
     <!-- heads up: starting < for the html tag (li or div) in the next line: -->
-    <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
-<?php endif; ?>
+    <<?php echo $tag ?> <?php comment_class(empty($args['has_children']) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+        <?php if ('div' != $args['style']) : ?>
+            <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+            <?php endif; ?>
+            <div class="comment-author vcard">
+                <?php if ($args['avatar_size'] != 0) echo get_avatar($comment, $args['180']); ?>
+                <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+            </div>
+            <?php if ($comment->comment_approved == '0') : ?>
+                <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+                <br />
+            <?php endif; ?>
 
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
+            <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>">
+                    <?php
+                        printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'), '  ', '');
+                                                                                            ?>
+            </div>
 
-	<?php comment_text() ?>
+            <?php comment_text() ?>
 
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
-<?php }
+            <div class="reply">
+                <?php comment_reply_link(array_merge($args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+            </div>
+            <?php if ('div' != $args['style']) : ?>
+            </div>
+        <?php endif; ?>
+    <?php }
 
-/*------------------------------------*\
+    /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
 
-// Add Actions
-add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
-add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
-add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
-add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+    // Add Actions
+    add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
+    add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
+    add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
+    add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
+    add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
+    add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+    add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
+    add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
-// Remove Actions
-remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
-remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
-remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
-remove_action('wp_head', 'index_rel_link'); // Index link
-remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
-remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
-remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-remove_action('wp_head', 'rel_canonical');
-remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+    // Remove Actions
+    remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
+    remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
+    remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+    remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
+    remove_action('wp_head', 'index_rel_link'); // Index link
+    remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
+    remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
+    remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
+    remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
+    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+    remove_action('wp_head', 'rel_canonical');
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
-// Add Filters
-add_filter('avatar_defaults', 'html5blankgravatar'); // Custom Gravatar in Settings > Discussion
-add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
-add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
-add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
-add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
-// add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
-// add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
-// add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
-add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
-add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
-add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
-add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
-add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
-add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
-add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
+    // Add Filters
+    add_filter('avatar_defaults', 'html5blankgravatar'); // Custom Gravatar in Settings > Discussion
+    add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
+    add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
+    add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
+    add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
+    // add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
+    // add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
+    // add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
+    add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
+    add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
+    add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
+    add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+    add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+    add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
+    add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
+    add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 
-// Remove Filters
-remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
+    // Remove Filters
+    remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
-// Shortcodes
-add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
-add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
+    // Shortcodes
+    add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
+    add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
 
-// Shortcodes above would be nested like this -
-// [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
+    // Shortcodes above would be nested like this -
+    // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
 
-/*------------------------------------*\
+    /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5()
-{
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ));
-}
+    // Create 1 Custom Post type for a Demo, called HTML5-Blank
+    function create_post_type_html5()
+    {
+        register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
+        register_taxonomy_for_object_type('post_tag', 'html5-blank');
+        register_post_type(
+            'html5-blank', // Register Custom Post Type
+            array(
+                'labels' => array(
+                    'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
+                    'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
+                    'add_new' => __('Add New', 'html5blank'),
+                    'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
+                    'edit' => __('Edit', 'html5blank'),
+                    'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
+                    'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
+                    'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
+                    'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
+                    'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
+                    'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
+                    'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+                ),
+                'public' => true,
+                'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+                'has_archive' => true,
+                'supports' => array(
+                    'title',
+                    'editor',
+                    'excerpt',
+                    'thumbnail'
+                ), // Go to Dashboard Custom HTML5 Blank post for supports
+                'can_export' => true, // Allows export in Tools > Export
+                'taxonomies' => array(
+                    'post_tag',
+                    'category'
+                ) // Add Category and Post Tags support
+            )
+        );
+    }
 
-/*------------------------------------*\
+    /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/
 
-// Shortcode Demo with Nested Capability
-function html5_shortcode_demo($atts, $content = null)
-{
-    return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
-}
-
-// Shortcode Demo with simple <h2> tag
-function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
-{
-    return '<h2>' . $content . '</h2>';
-}
-
-add_filter('body_class', function (array $classes) {
-    if (in_array('class_name', $classes)) {
-      unset( $classes[array_search('class_name', $classes)] );
+    // Shortcode Demo with Nested Capability
+    function html5_shortcode_demo($atts, $content = null)
+    {
+        return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
     }
-  return $classes;
-});
 
-function disable_emojis() {
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-    remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
-    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
-    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-    add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
-    add_filter( 'wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2 );
-   }
-   add_action( 'init', 'disable_emojis' );
-   
-   /**
-    * Filter function used to remove the tinymce emoji plugin.
-    * 
-    * @param array $plugins 
-    * @return array Difference betwen the two arrays
-    */
-   function disable_emojis_tinymce( $plugins ) {
-    if ( is_array( $plugins ) ) {
-    return array_diff( $plugins, array( 'wpemoji' ) );
-    } else {
-    return array();
+    // Shortcode Demo with simple <h2> tag
+    function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
+    {
+        return '<h2>' . $content . '</h2>';
     }
-   }
-   
-   /**
-    * Remove emoji CDN hostname from DNS prefetching hints.
-    *
-    * @param array $urls URLs to print for resource hints.
-    * @param string $relation_type The relation type the URLs are printed for.
-    * @return array Difference betwen the two arrays.
-    */
-   function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
-    if ( 'dns-prefetch' == $relation_type ) {
-    /** This filter is documented in wp-includes/formatting.php */
-    $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
-   
-   $urls = array_diff( $urls, array( $emoji_svg_url ) );
+
+    add_filter('body_class', function (array $classes) {
+        if (in_array('class_name', $classes)) {
+            unset($classes[array_search('class_name', $classes)]);
+        }
+        return $classes;
+    });
+
+    function disable_emojis()
+    {
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        remove_action('admin_print_scripts', 'print_emoji_detection_script');
+        remove_action('wp_print_styles', 'print_emoji_styles');
+        remove_action('admin_print_styles', 'print_emoji_styles');
+        remove_filter('the_content_feed', 'wp_staticize_emoji');
+        remove_filter('comment_text_rss', 'wp_staticize_emoji');
+        remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+        add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
+        add_filter('wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2);
     }
-   
-   return $urls;
-   }
+    add_action('init', 'disable_emojis');
 
-   class FLHM_HTML_Compression
-{
-protected $flhm_compress_css = true;
-protected $flhm_compress_js = true;
-protected $flhm_info_comment = true;
-protected $flhm_remove_comments = true;
-protected $html;
-public function __construct($html)
-{
-if (!empty($html))
-{
-$this->flhm_parseHTML($html);
-}
-}
-public function __toString()
-{
-return $this->html;
-}
-protected function flhm_bottomComment($raw, $compressed)
-{
-$raw = strlen($raw);
-$compressed = strlen($compressed);
-$savings = ($raw-$compressed) / $raw * 100;
-$savings = round($savings, 2);
-return '<!--HTML compressed, size saved '.$savings.'%. From '.$raw.' bytes, now '.$compressed.' bytes-->';
-}
-protected function flhm_minifyHTML($html)
-{
-$pattern = '/<(?<script>script).*?<\/script\s*>|<(?<style>style).*?<\/style\s*>|<!(?<comment>--).*?-->|<(?<tag>[\/\w.:-]*)(?:".*?"|\'.*?\'|[^\'">]+)*>|(?<text>((<[^!\/\w.:-])?[^<]*)+)|/si';
-preg_match_all($pattern, $html, $matches, PREG_SET_ORDER);
-$overriding = false;
-$raw_tag = false;
-$html = '';
-foreach ($matches as $token)
-{
-$tag = (isset($token['tag'])) ? strtolower($token['tag']) : null;
-$content = $token[0];
-if (is_null($tag))
-{
-if ( !empty($token['script']) )
-{
-$strip = $this->flhm_compress_js;
-}
-else if ( !empty($token['style']) )
-{
-$strip = $this->flhm_compress_css;
-}
-else if ($content == '<!--wp-html-compression no compression-->')
-{
-$overriding = !$overriding; 
-continue;
-}
-else if ($this->flhm_remove_comments)
-{
-if (!$overriding && $raw_tag != 'textarea')
-{
-$content = preg_replace('/<!--(?!\s*(?:\[if [^\]]+]|<!|>))(?:(?!-->).)*-->/s', '', $content);
-}
-}
-}
-else
-{
-if ($tag == 'pre' || $tag == 'textarea')
-{
-$raw_tag = $tag;
-}
-else if ($tag == '/pre' || $tag == '/textarea')
-{
-$raw_tag = false;
-}
-else
-{
-if ($raw_tag || $overriding)
-{
-$strip = false;
-}
-else
-{
-$strip = true; 
-$content = preg_replace('/(\s+)(\w++(?<!\baction|\balt|\bcontent|\bsrc)="")/', '$1', $content); 
-$content = str_replace(' />', '/>', $content);
-}
-}
-} 
-if ($strip)
-{
-$content = $this->flhm_removeWhiteSpace($content);
-}
-$html .= $content;
-} 
-return $html;
-} 
-public function flhm_parseHTML($html)
-{
-$this->html = $this->flhm_minifyHTML($html);
-if ($this->flhm_info_comment)
-{
-$this->html .= "\n" . $this->flhm_bottomComment($html, $this->html);
-}
-}
-protected function flhm_removeWhiteSpace($str)
-{
-$str = str_replace("\t", ' ', $str);
-$str = str_replace("\n",  '', $str);
-$str = str_replace("\r",  '', $str);
-while (stristr($str, '  '))
-{
-$str = str_replace('  ', ' ', $str);
-}   
-return $str;
-}
-}
-function flhm_wp_html_compression_finish($html)
-{
-return new FLHM_HTML_Compression($html);
-}
-function flhm_wp_html_compression_start()
-{
-ob_start('flhm_wp_html_compression_finish');
-}
-add_action('get_header', 'flhm_wp_html_compression_start');
-
-add_action('wp_head', function () {
-
-    global $wp_scripts;
-
-    foreach($wp_scripts->queue as $handle) {
-        $script = $wp_scripts->registered[$handle];
-
-        //-- Weird way to check if script is being enqueued in the footer.
-        if($script->extra['group'] === 1) {
-
-            //-- If version is set, append to end of source.
-            $source = $script->src . ($script->ver ? "?ver={$script->ver}" : "");
-
-            //-- Spit out the tag.
-            echo "<link rel='preload' href='{$source}' as='script'/>\n";
+    /**
+     * Filter function used to remove the tinymce emoji plugin.
+     * 
+     * @param array $plugins 
+     * @return array Difference betwen the two arrays
+     */
+    function disable_emojis_tinymce($plugins)
+    {
+        if (is_array($plugins)) {
+            return array_diff($plugins, array('wpemoji'));
+        } else {
+            return array();
         }
     }
-}, 1);
+
+    /**
+     * Remove emoji CDN hostname from DNS prefetching hints.
+     *
+     * @param array $urls URLs to print for resource hints.
+     * @param string $relation_type The relation type the URLs are printed for.
+     * @return array Difference betwen the two arrays.
+     */
+    function disable_emojis_remove_dns_prefetch($urls, $relation_type)
+    {
+        if ('dns-prefetch' == $relation_type) {
+            /** This filter is documented in wp-includes/formatting.php */
+            $emoji_svg_url = apply_filters('emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/');
+
+            $urls = array_diff($urls, array($emoji_svg_url));
+        }
+
+        return $urls;
+    }
+
+    class FLHM_HTML_Compression
+    {
+        protected $flhm_compress_css = true;
+        protected $flhm_compress_js = true;
+        protected $flhm_info_comment = true;
+        protected $flhm_remove_comments = true;
+        protected $html;
+        public function __construct($html)
+        {
+            if (!empty($html)) {
+                $this->flhm_parseHTML($html);
+            }
+        }
+        public function __toString()
+        {
+            return $this->html;
+        }
+        protected function flhm_bottomComment($raw, $compressed)
+        {
+            $raw = strlen($raw);
+            $compressed = strlen($compressed);
+            $savings = ($raw - $compressed) / $raw * 100;
+            $savings = round($savings, 2);
+            return '<!--HTML compressed, size saved ' . $savings . '%. From ' . $raw . ' bytes, now ' . $compressed . ' bytes-->';
+        }
+        protected function flhm_minifyHTML($html)
+        {
+            $pattern = '/<(?<script>script).*?<\/script\s*>|<(?<style>style).*?<\/style\s*>|<!(?<comment>--).*?-->|<(?<tag>[\/\w.:-]*)(?:".*?"|\'.*?\'|[^\'">]+)*>|(?<text>((<[^!\/\w.:-])?[^<]*)+)|/si';
+            preg_match_all($pattern, $html, $matches, PREG_SET_ORDER);
+            $overriding = false;
+            $raw_tag = false;
+            $html = '';
+            foreach ($matches as $token) {
+                $tag = (isset($token['tag'])) ? strtolower($token['tag']) : null;
+                $content = $token[0];
+                if (is_null($tag)) {
+                    if (!empty($token['script'])) {
+                        $strip = $this->flhm_compress_js;
+                    } else if (!empty($token['style'])) {
+                        $strip = $this->flhm_compress_css;
+                    } else if ($content == '<!--wp-html-compression no compression-->') {
+                        $overriding = !$overriding;
+                        continue;
+                    } else if ($this->flhm_remove_comments) {
+                        if (!$overriding && $raw_tag != 'textarea') {
+                            $content = preg_replace('/<!--(?!\s*(?:\[if [^\]]+]|<!|>))(?:(?!-->).)*-->/s', '', $content);
+                        }
+                    }
+                } else {
+                    if ($tag == 'pre' || $tag == 'textarea') {
+                        $raw_tag = $tag;
+                    } else if ($tag == '/pre' || $tag == '/textarea') {
+                        $raw_tag = false;
+                    } else {
+                        if ($raw_tag || $overriding) {
+                            $strip = false;
+                        } else {
+                            $strip = true;
+                            $content = preg_replace('/(\s+)(\w++(?<!\baction|\balt|\bcontent|\bsrc)="")/', '$1', $content);
+                            $content = str_replace(' />', '/>', $content);
+                        }
+                    }
+                }
+                if ($strip) {
+                    $content = $this->flhm_removeWhiteSpace($content);
+                }
+                $html .= $content;
+            }
+            return $html;
+        }
+        public function flhm_parseHTML($html)
+        {
+            $this->html = $this->flhm_minifyHTML($html);
+            if ($this->flhm_info_comment) {
+                $this->html .= "\n" . $this->flhm_bottomComment($html, $this->html);
+            }
+        }
+        protected function flhm_removeWhiteSpace($str)
+        {
+            $str = str_replace("\t", ' ', $str);
+            $str = str_replace("\n",  '', $str);
+            $str = str_replace("\r",  '', $str);
+            while (stristr($str, '  ')) {
+                $str = str_replace('  ', ' ', $str);
+            }
+            return $str;
+        }
+    }
+    function flhm_wp_html_compression_finish($html)
+    {
+        return new FLHM_HTML_Compression($html);
+    }
+    function flhm_wp_html_compression_start()
+    {
+        ob_start('flhm_wp_html_compression_finish');
+    }
+    add_action('get_header', 'flhm_wp_html_compression_start');
+
+    add_action('wp_head', function () {
+
+        global $wp_scripts;
+
+        foreach ($wp_scripts->queue as $handle) {
+            $script = $wp_scripts->registered[$handle];
+
+            //-- Weird way to check if script is being enqueued in the footer.
+            if ($script->extra['group'] === 1) {
+
+                //-- If version is set, append to end of source.
+                $source = $script->src . ($script->ver ? "?ver={$script->ver}" : "");
+
+                //-- Spit out the tag.
+                echo "<link rel='preload' href='{$source}' as='script'/>\n";
+            }
+        }
+    }, 1);

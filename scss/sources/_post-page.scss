@@ -6,13 +6,13 @@
     margin-bottom: 2rem;
     position: relative;
 
-    @include mq('tablet') {
+    @include mq("tablet") {
       width: calc(35% - 10px);
       margin-bottom: 0;
       margin-top: 30px;
     }
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       &::before {
         display: block;
         content: "";
@@ -31,9 +31,10 @@
     img {
       max-width: 100%;
       border-radius: 15px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.01);
 
-      @include mq('desktop') {
+      @include mq("desktop") {
         position: absolute;
         left: -100px;
         max-width: 450px;
@@ -45,7 +46,7 @@
     width: 100%;
     margin-bottom: 30px;
 
-    @include mq('tablet') {
+    @include mq("tablet") {
       width: calc(65% - 10px);
       margin-top: 30px;
       margin-bottom: 50px;
