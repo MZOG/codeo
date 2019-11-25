@@ -19,7 +19,7 @@ $blog = new WP_Query( array(
     <p>Tworzę strony internetowe, które są szybkie, ładne oraz przyciągają klientów.</p>
 
     <div class="intro-cta">
-      <button class="btn">Zobacz realizacje</button>
+		<a href="#portfolio" class="btn">Zobacz realizacje</a>
     </div>
 
     <div class="intro-svg">
@@ -73,7 +73,7 @@ $blog = new WP_Query( array(
 
 
 <!-- portfolio -->
-<section class="portfolio-homepage">
+<section class="portfolio-homepage" id="portfolio">
   <div class="container">
     <h2 class="noe">Realizacje</h2>
     <p>Zobacz ostatnie projekty.</p>
