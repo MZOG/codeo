@@ -412,3 +412,27 @@ h2 {
       }
     }
   }
+
+  #breadcrumbs {
+      width: 100%;
+      opacity: 0.3;
+      @include transition(all .1s ease-in-out);
+      
+      &:hover {
+          opacity: 1;
+      }
+
+      a {
+          color: $purple;
+          font-weight: 400;
+          text-decoration: none;
+
+          &:hover {
+              border-bottom: 1px solid $purple;
+          }
+      }
+
+      span {
+          font-weight: 500;
+      }
+  }

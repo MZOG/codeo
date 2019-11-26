@@ -7,7 +7,7 @@
 							</span>
 
 							<span class="footer-email">
-								<a href="mailto:kontakt@marcinzogrodnik.pl">kontakt@marcinzogrodnik.pl</a>
+								<a href="mailto:hello@zogdev.co.uk">hello@zogdev.co.uk</a>
 							</span>
 						</p>
 						<?php footer_menu(); ?>
@@ -19,16 +19,13 @@
 		</main>
 
 		<?php wp_footer(); ?>
-
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145426129-1"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107095425-1"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-			gtag('config', 'UA-145426129-1');
+		gtag('config', 'UA-107095425-1');
 		</script>
-
 	</body>
 </html>

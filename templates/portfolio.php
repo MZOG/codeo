@@ -11,6 +11,12 @@ $portfolio = new WP_Query( array(
 
   <h1 class="noe">Work</h1>
 
+  <?php
+    if ( function_exists('yoast_breadcrumb') ) {
+    yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+    }
+  ?>
+
   <div class="blog-articles">
   <!-- <?php $i = 1; ?> -->
   <?php if ( $portfolio->have_posts() ) : ?>

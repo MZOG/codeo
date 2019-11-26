@@ -5,6 +5,12 @@
 			
 			<h1 class="noe post_name"><?php the_title(); ?></h1>
 
+			<?php
+				if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+				}
+			?>
+
 			<div class="post__left">
 				<!-- featured image -->
 				<?php if ( has_post_thumbnail()) :?>

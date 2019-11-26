@@ -15,8 +15,8 @@ $blog = new WP_Query(array(
 <!-- intro -->
 <section class="intro">
 	<div class="container">
-		<h1 class="noe">Strony internetowe dla profesjonalistów.</h1>
-		<p>Tworzę strony internetowe, które są szybkie, ładne oraz przyciągają klientów.</p>
+		<h1 class="noe">Web Development for professionals.</h1>
+		<p>Using latest technologies I am crafting modern, fast and secure websites.</p>
 
 		<div class="intro-cta">
 			<a href="#portfolio" class="btn">Latest projects</a>
@@ -95,7 +95,7 @@ $blog = new WP_Query(array(
 		</div>
 
 		<div class="portfolio-cta">
-			<a href="portfolio" class="btn">Check more projects</a>
+			<a href="work" class="btn">Check more projects</a>
 		</div>
 	</div>
 </section>
