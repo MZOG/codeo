@@ -12,7 +12,7 @@
 						</p>
 						<?php footer_menu(); ?>
 					</div>
-					<p class="copyright">&copy; <?php echo date('Y'); ?>  <?php bloginfo('name'); ?>.</p>
+					<p class="copyright">zogdev &copy; <?php echo date('Y'); ?>  <?php bloginfo('name'); ?>.</p>
 
 				</div>
 			</footer>
