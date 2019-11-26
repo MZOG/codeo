@@ -19,7 +19,7 @@ $blog = new WP_Query(array(
 		<p>Tworzę strony internetowe, które są szybkie, ładne oraz przyciągają klientów.</p>
 
 		<div class="intro-cta">
-			<a href="#portfolio" class="btn">Zobacz realizacje</a>
+			<a href="#portfolio" class="btn">Latest projects</a>
 		</div>
 
 		<div class="intro-svg">
@@ -74,8 +74,8 @@ $blog = new WP_Query(array(
 <!-- portfolio -->
 <section class="portfolio-homepage" id="portfolio">
 	<div class="container">
-		<h2 class="noe">Realizacje</h2>
-		<p>Zobacz ostatnie projekty.</p>
+		<h2 class="noe">Work</h2>
+		<p>Check out my latest projects.</p>
 
 		<div class="portfolio-container">
 			<?php if ($portfolio->have_posts()) : ?>
@@ -95,7 +95,7 @@ $blog = new WP_Query(array(
 		</div>
 
 		<div class="portfolio-cta">
-			<a href="portfolio" class="btn">Zobacz więcej</a>
+			<a href="portfolio" class="btn">Check more projects</a>
 		</div>
 	</div>
 </section>
@@ -103,40 +103,40 @@ $blog = new WP_Query(array(
 <!-- process -->
 <section class="process">
 	<div class="container">
-		<h2 class="noe">Jak wygląda współpraca?</h2>
-		<p>Zobacz jak wygląda proces tworzenia strony internetowej dla Twojego biznesu.</p>
+		<h2 class="noe">What is the process?</h2>
+		<p>Check out the process of crafting a website for your business.</p>
 
 		<div class="process-timeline">
 			<div class="timeline-item">
-				<h3>Analiza</h3>
-				<p>Badam rynek pod Twoją firmę, sprawdzam co możemy osiągnąć.</p>
+				<h3>Analysis</h3>
+				<p>I research your company's market and check what we can achieve.</p>
 			</div>
 
 			<div class="timeline-item">
-				<h3>Wstępny projekt</h3>
-				<p>Według wytycznych oraz własnych pomysłów przygotowuję projekt.</p>
+				<h3>Project draft</h3>
+				<p>I prepare the project according to the guidelines and my own ideas.</p>
 			</div>
 
 			<div class="timeline-item">
-				<h3>Realizacja</h3>
-				<p>Uzywając najnowszych technologii, wprowadzam projekt w życie.</p>
+				<h3>Implementation</h3>
+				<p>Using the latest technologies, I implement the project.</p>
 			</div>
 
 			<div class="timeline-item">
-				<h3>Efekty</h3>
-				<p>Twoja strona wygląda świetnie, jest szybka i przyciąga klientów.</p>
+				<h3>Effects</h3>
+				<p>Your website looks great, is's fast and attracts customers.</p>
 			</div>
 		</div>
 		<div class="process-cta">
-			<a href="darmowa-wycena-strony-www" class="btn">Zapraszam do współpracy</a>
+			<a href="free-quote" class="btn">Get in touch</a>
 		</div>
 	</div>
 </section>
 
 <section class="offer">
 	<div class="container">
-		<h2 class="noe">Oferta dla firm oraz klientów indywidualnych</h2>
-		<p>Estetyczne strony oraz sklepy internetowe używając najnowszych technologii takich jak GatsbyJS, Vue czy React.</p>
+		<h2 class="noe">Services</h2>
+		<p>Using latest technologies I am crafting beautiful websites with GatsbyJS, Vue or React.</p>
 
 		<div class="offer-container">
 			<div class="offer-item">
@@ -227,9 +227,9 @@ $blog = new WP_Query(array(
 
 				</svg>
 
-				<h3>Strony internetowe</h3>
-				<p>Dostosowane do urząrzeń mobilnych oraz SEO, wygodne w obsłudze strony internetowe.</p>
-				<a href="oferta/strony-internetowe">Strony internetowe - szczegóły</a>
+				<h3>Websites</h3>
+				<p>Mobile and SEO friendly, easy to maintain websites for your business.</p>
+				<a href="offer/responsive-websites">Websites - info</a>
 			</div>
 
 			<div class="offer-item">
@@ -243,9 +243,9 @@ $blog = new WP_Query(array(
 					<path d="m125.828 320.979h82.359c1.791 0 3.244-1.453 3.244-3.244s-1.453-3.244-3.244-3.244h-82.359c-1.791 0-3.244 1.453-3.244 3.244s1.454 3.244 3.244 3.244z" />
 					<path d="m427.253 353.95-104.681-181.322c-.919-1.598-2.935-2.063-4.435-1.19l-11.625 6.712 6.45-12.244c.516-.984.496-2.17-.057-3.131-18-30.797-16.547-29.648-18.216-30.431l-42.497-19.866c-.966-.45-2.082-.398-3 .131l-69.103 39.881h-9.057c-.619-18.108-2.859-38.466-9.037-52.027 9.703-10.523 17.063-21.881 14.587-30.501-1.678-5.85-7.285-9.59-16.669-11.119-44.822-7.35-90.853 51.047-70.744 74.592 6.103 7.111 16.931 15.225 26.7 22.945l-25.066 35.94c-1.069 1.547-.375.028-.591 35.452 0 1.116.572 2.151 1.519 2.747l11.793 7.449h-13.508c-1.791 0-3.244 1.453-3.244 3.244v209.33c0 1.795 1.453 3.248 3.244 3.248h153.938c1.791 0 3.244-1.453 3.244-3.248v-87.554l41.128 71.175c.891 1.547 2.868 2.086 4.425 1.187l133.313-76.964c1.545-.897 2.08-2.884 1.189-4.436zm-176.278-234.872 40.041 18.712 15.375 26.672-10.416 19.777-52.2 30.145c-.197-20.69.441-20.592-.581-22.059l-3.263-4.678c9.225-6.061 12.253-18.38 6.694-28.022-6.159-10.631-20.372-13.974-30.694-6.267-.6-.548-1.378-.867-2.194-.867h-20.662zm-14.756 63.244-16.519-23.7c7.05-5.354 16.969-3.225 21.3 4.256 3.872 6.699 1.716 15.286-4.781 19.444zm-142.116-53.11c-15.178-17.766 24.516-70.556 64.763-63.965 6.694 1.092 10.556 3.281 11.484 6.501 1.369 4.805-2.859 12.862-11.663 22.715-3.891-5.761-9.234-9.67-16.209-9.825-9.038-.239-15.844 4.209-18.225 11.883-4.575 14.737 8.653 30.666 23.888 17.311 2.981-2.611 6.047-5.433 9.019-8.367 4.959 12.361 6.825 30.543 7.369 47.025h-43.116c-1.884-1.5-3.769-2.981-5.606-4.425-8.738-6.862-16.988-13.349-21.704-18.853zm60.019-29.897c-3.038 3.089-6.469 6.314-10.256 9.638-2.7 2.362-6.609 4.729-9.91 2.583-6.141-3.984-6.872-20.789 8.363-20.405 5.334.118 9.018 3.661 11.803 8.184zm-57.413 126.671v-30.788l25.266-36.22h42.703c.056 4.303.038 8.405-.028 12.16-10.453 1.162-18.609 10.05-18.609 20.803 0 11.55 9.394 20.944 20.944 20.944 11.541 0 20.935-9.394 20.935-20.944 0-10.111-7.209-18.572-16.753-20.512.075-3.839.094-8.035.028-12.45h40.847c-.384-.511 4.341 6.328 25.247 36.22v30.788l-18.975 11.981h-102.639zm70.275-30.801c1.669 0 3.094-1.28 3.234-2.972.065-.806.487-6.188.769-14.137 6.019 1.739 10.444 7.293 10.444 13.865 0 7.969-6.487 14.452-14.447 14.452-7.969 0-14.447-6.483-14.447-14.452 0-7.106 5.166-13.021 11.934-14.212-.271 8.288-.712 13.749-.722 13.95-.158 1.888 1.332 3.506 3.235 3.506zm73.716 252.112h-147.441v-202.838h147.441zm51.618-19.191-45.122-78.089v-63.937c.619-.216-3.909 2.306 71.84-41.452 1.041-.6 1.622-1.697 1.622-2.813 0-2.475-2.7-4.059-4.865-2.808l-68.597 39.651v-14.747l62.25-35.943c1.05-.6 1.631-1.688 1.631-2.813 0-2.466-2.7-4.064-4.875-2.803l-59.006 34.069v-14.709l52.613-30.398c1.04-.6 1.622-1.692 1.622-2.817 0-2.466-2.691-4.06-4.866-2.803l-55.856 32.273h-10.238l11.794-7.449c.815-.525 1.359-1.378 1.481-2.334.047-.366.019-.07.028-6.305 37.247-21.492 46.762-26.958 74.793-43.195l101.438 175.701z" />
 					<path d="m252.935 301.286c.9 1.556 2.878 2.086 4.435 1.19l71.315-41.208c1.04-.6 1.622-1.688 1.622-2.813 0-2.465-2.7-4.064-4.875-2.803l-71.307 41.203c-1.556.897-2.091 2.879-1.19 4.431z" /></svg>
-				<h3>Sklepy internetowe</h3>
-				<p>WooCommerce to najpopularniejszy system e-commerce, łatwy w obsłudze spełni Twoje oczekiwania.</p>
-				<a href="oferta/sklepy-internetowe">Sklepy internetowe - szczegóły</a>
+				<h3>E-commerece</h3>
+				<p>Using the most popular WooCommerce engine your online store will stand out.</p>
+				<a href="offer/e-commerce">E-commerce - info</a>
 			</div>
 
 			<div class="offer-item">
@@ -353,9 +353,9 @@ $blog = new WP_Query(array(
 
 				</svg>
 
-				<h3>Projekty graficzne</h3>
-				<p>Projektuję strony internetowe od zera, inspiracje znajdziemy razem, Twoja strona będzie idealna.</p>
-				<a href="oferta/projekty-graficzne">Projekty graficzne - szczegóły</a>
+				<h3>Web Design</h3>
+				<p>Crafted for individual needs, eye catching and full of latest trends.</p>
+				<a href="offer/web-design">Web Design - info</a>
 			</div>
 
 			<div class="offer-item">
@@ -368,9 +368,9 @@ $blog = new WP_Query(array(
 					<path d="m325.891 142.052c-1.791 0-3.244 1.453-3.244 3.244v249.839c0 1.79 1.453 3.243 3.244 3.243h30.361c1.795 0 3.248-1.453 3.248-3.243v-249.84c0-1.791-1.453-3.244-3.248-3.244h-30.361zm27.117 249.829h-23.869v-243.337h23.869z" />
 					<path d="m373.9 93.034v302.101c0 1.79 1.453 3.243 3.243 3.243h30.422c1.791 0 3.244-1.453 3.244-3.243v-302.101c0-1.795-1.453-3.248-3.244-3.248h-30.422c-1.789 0-3.243 1.453-3.243 3.248zm6.488 3.244h23.935v295.603h-23.935z" />
 					<path d="m120.901 230.509 72.422-72.487 27.797 27.783c1.266 1.271 3.319 1.271 4.589.005l57.863-57.788 16.167 16.163c1.266 1.266 3.323 1.266 4.589-.005l73.458-73.439-.909 10.116c-.16 1.786 1.157 3.365 2.943 3.525 1.795.159 3.365-1.167 3.525-2.944.042-.483 1.758-19.692 1.715-19.209.09-1.055-.516-2.334-1.8-3.009-.914-.459.108-.276-21.206-1.008-1.814-.07-3.291 1.345-3.352 3.136s1.346 3.291 3.136 3.352l12.398.417-72.206 72.183-16.167-16.158c-1.266-1.266-3.319-1.266-4.585 0l-57.862 57.783-27.797-27.783c-1.275-1.275-3.333-1.266-4.594 0l-74.719 74.78c-1.266 1.27-1.266 3.323 0 4.589s3.325 1.264 4.595-.002z" /></svg>
-				<h3>Reklama</h3>
-				<p>Nie wiesz jak reklamować swój biznes? Reklama w Google czy Facebook wygeneruje pożądany zysk.</p>
-				<a href="oferta/reklama">Reklama - szczegóły</a>
+				<h3>Ads</h3>
+				<p>If you have no idea how to promote your business I will help you stand out.</p>
+				<a href="offere/ads">Ads - info</a>
 			</div>
 
 			<div class="offer-item">
@@ -426,8 +426,8 @@ $blog = new WP_Query(array(
 				</svg>
 
 				<h3>SEO</h3>
-				<p>Dzięki sprawdzonym praktykom, Twoja strona będzie wyżej w wynikach wyszukiwania.</p>
-				<a href="oferta/pozycjonowanie">SEO - szczegóły</a>
+				<p>Your website is not on the first page? That's really bad, let me fix it.</p>
+				<a href="offer/seo">SEO - info</a>
 			</div>
 
 			<div class="offer-item">
@@ -481,8 +481,8 @@ $blog = new WP_Query(array(
 				</svg>
 
 				<h3>Hosting</h3>
-				<p>Oferuję szybki oraz bezpieczny hosting VPS, nie musisz się martwić o włamanie czy stratę danych.</p>
-				<a href="oferta/hosting">Hosting - szczegóły</a>
+				<p>Fast and secure VPS hosting for your business. Do not worry about data leaks.</p>
+				<a href="offer/hosting">Hosting - info</a>
 			</div>
 		</div>
 	</div>
@@ -490,8 +490,8 @@ $blog = new WP_Query(array(
 
 <section class="articles">
 	<div class="container">
-		<h2 class="noe">Ostatnio na blogu</h2>
-		<p>Artykuły na temat firmy, stron internetowych oraz świata Front End.</p>
+		<h2 class="noe">Articles</h2>
+		<p>Articles about company, websites and Front End world.</p>
 
 		<div class="articles-container">
 			<?php if ($blog->have_posts()) : ?>
@@ -518,8 +518,7 @@ $blog = new WP_Query(array(
 
 <section class="testimonials">
 	<div class="container">
-		<h2 class="noe">Opinie klientów</h2>
-		<p>Zadowolenie klienta jest najważniejsze, zobacz co do powiedzenia mają moi klienci.</p>
+		<h2 class="noe">Testimonials</h2>
 
 		<div class="testimonial-container">
 
@@ -527,13 +526,13 @@ $blog = new WP_Query(array(
 				<div class="top">
 					<div class="info">
 						<h3>Karolina Wawrzyniak</h3>
-						<a href="https://www.doradcajezykowy.com">doradcajezykowy.com</a>
+						<a href="https://www.doradcajezykowy.com/en">doradcajezykowy.com</a>
 					</div>
 				</div>
-				<p>Współpraca z Marcinem była wspaniała. W błyskawicznym tempie odpowiadał na wszystkie moje zapytania i zamieszczał kolejne elementy na stronie. W cierpliwy sposób tłumaczył na czym polega budowanie strony internetowej i na czym jako przedsiębiorca powinnam się skupić najbardziej. W stu procentach spełnił moje oczekiwania, zatem mogę go polecić jako świetnego fachowca!</p>
+				<p>Working with Marcin was excellent! He answered all my questions and posted each element of the Website very quickly. He was explaining to me patiently, what Website building looks like and what should I focus on as an entrepreneur. He met my expectations 100 percent, that’s why I recommend him because he is professional and you wouldn’t regret working with him.</p>
 			</div>
 
-			<div class="testimonial-item">
+			<!-- <div class="testimonial-item">
 				<div class="top">
 					<div class="info">
 						<h3>Grzegorz Rusztof</h3>
@@ -541,7 +540,7 @@ $blog = new WP_Query(array(
 					</div>
 				</div>
 				<p>Współpraca z Marcinem to czysta przyjemność. Doskonale zrozumiał koncepcję firmy oraz wybrał najlepsze rozwiązania aby poprawić wygląd naszej strony. Marcin zawsze służy pomocą nawet w najdrobniejszych zmianach.</p>
-			</div>
+			</div> -->
 
 		</div>
 	</div>

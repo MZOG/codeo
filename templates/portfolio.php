@@ -9,7 +9,7 @@ $portfolio = new WP_Query( array(
 <section class="blog page">
   <div class="container container-flex">
 
-  <h1 class="noe">Realizacje</h1>
+  <h1 class="noe">Work</h1>
 
   <div class="blog-articles">
   <!-- <?php $i = 1; ?> -->
@@ -38,10 +38,10 @@ $portfolio = new WP_Query( array(
     <?php 
       if( 1 == $portfolio->current_post ):
         echo '<article class="blog-articles-item blog-articles-sponsored">
-        <h2>Profesjonalna wycena projektu</h2>
-        <p>Wyróżnij się w internecie</p>
+        <h2>Get a free quote</h2>
+        <p>Make your website standing out</p>
         <div class="blog-articles-sponsored__cta">
-          <a class="btn" href="darmowa-wycena-strony-www">Dowiedz się więcej</a>
+          <a class="btn" href="free-quote">Get in touch</a>
         </div>
       </article>';
     endif;
