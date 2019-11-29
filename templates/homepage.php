@@ -86,6 +86,7 @@ $blog = new WP_Query(array(
 								<img src="<?php echo the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
 							</a>
 						</div>
+						<h3><?php the_title(); ?></h3>
 					</article>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
